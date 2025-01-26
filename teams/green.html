@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Green</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="#index">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div class="container">
+        <h1>Team Green</h1>
+        <p><strong>Team Leader:</strong> John Doe</p>
+        <p><strong>Members:</strong> Jane Smith, Bob Johnson, Alice Brown</p>
+        <p><strong>Project:</strong> Building a responsive website</p>
+        <p><strong>Goals:</strong> Improve user experience, increase accessibility, and optimize performance</p>
+    </div>
+</body>
+</html>
+<div class="additional-info">
+    <h2>Additional Information</h2>
+    <div class="additional-info">
+        <h2>Additional Information</h2>
+        <p><strong>Number of Cards:</strong> <span id="num-cards"></span></p>
+        <p><strong>Last Match:</strong> <span id="last-match"></span></p>
+        <p><strong>Manager:</strong> <span id="manager"></span></p>
+        <p><strong>MVP:</strong> <span id="mvp"></span></p>
+        <p><strong>Position on Table:</strong> <span id="position"></span></p>
+        <p><strong>Points:</strong> <span id="points"></span></p>
+    </div>
+
+    <script>
+        // Fetch data from the database (simulated here with a JSON object)
+        const teamData = {
+            numCards: 5,
+            lastMatch: "Won against Team Red",
+            manager: "Sarah Connor",
+            mvp: "Jane Smith",
+            position: "2nd",
+            points: 45
+        };
+
+        // Populate the HTML with the data
+        document.getElementById('num-cards').textContent = teamData.numCards;
+        document.getElementById('last-match').textContent = teamData.lastMatch;
+        document.getElementById('manager').textContent = teamData.manager;
+        document.getElementById('mvp').textContent = teamData.mvp;
+        document.getElementById('position').textContent = teamData.position;
+        document.getElementById('points').textContent = teamData.points;
+    </script>
