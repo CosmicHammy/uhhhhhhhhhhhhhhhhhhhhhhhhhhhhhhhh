@@ -5,6 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nova Football League</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #ffa500; /* Default background color changed to orange */
+            transition: background 0.5s;
+        }
+        nav {
+            background-color: #444;
+            padding: 10px 0; /* Reduced padding for smaller navbar */
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px; /* Reduced margin for smaller navbar */
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px; /* Reduced font size for smaller navbar */
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        header {
+            text-align: center;
+            padding: 40px 0;
+        }
+        header img {
+            width: 200px;
+            height: auto;
+        }
+        .button-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+        .button-container button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            margin: 10px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        .button-container button:hover {
+            background-color: #555;
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -15,8 +70,23 @@
             <li><a href="matches.html">Matches</a></li>
         </ul>
     </nav>
+    <header>
+        <img src="assets/nfllogo.svg" alt="Nova Football League Logo">
+    </header>
+    <div class="button-container">
+        <button onclick="location.href='table.html'">Table</button>
+        <button onclick="location.href='teams.html'">Teams</button>
+        <button onclick="location.href='news.html'">News</button>
+    </div>
     
-   <script src="index.js"></script> 
-
+    <script>
+        document.addEventListener('mousemove', function(e) {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            const hue = Math.round(x * 360);
+            const lightness = Math.round(y * 100);
+            document.body.style.backgroundColor = `hsl(${hue}, 100%, ${lightness}%)`;
+        });
+    </script>
 </body>
 </html>
