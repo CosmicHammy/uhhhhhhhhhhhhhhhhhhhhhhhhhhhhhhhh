@@ -5,9 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team Green</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #4CAF50; /* Team Green color */
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #388E3C;
+            padding: 1em;
+            text-align: center;
+        }
+        .navbar a {
+            color: white;
+            margin: 0 1em;
+            text-decoration: none;
+        }
+        .navbar img {
+            background-color: #4CAF50; /* Match the background color */
+            border-radius: 50%;
+            padding: 5px;
+        }
+        .container {
+            padding: 2em;
+            text-align: center;
+        }
+        .additional-info {
+            background-color: #66BB6A; /* Lighter shade of green */
+            color: white;
+            margin: 2em auto;
+            padding: 1em;
+            width: 80%;
+            border-radius: 8px;
+        }
+        .additional-info h2 {
+            margin-top: 0;
+        }
+    </style>
 </head>
 <body>
     <div class="navbar">
+        <a href="javascript:window.history.back()">
+            <img src="../assets/back.svg" alt="Back" width="20" height="20">
+        </a>
         <a href="#index">Home</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
@@ -19,11 +61,9 @@
         <p><strong>Members:</strong> Jane Smith, Bob Johnson, Alice Brown</p>
         <p><strong>Project:</strong> Building a responsive website</p>
         <p><strong>Goals:</strong> Improve user experience, increase accessibility, and optimize performance</p>
+        <button onclick="window.history.back()">Back</button>
     </div>
-</body>
-</html>
-<div class="additional-info">
-    <h2>Additional Information</h2>
+
     <div class="additional-info">
         <h2>Additional Information</h2>
         <p><strong>Number of Cards:</strong> <span id="num-cards"></span></p>
@@ -53,3 +93,5 @@
         document.getElementById('position').textContent = teamData.position;
         document.getElementById('points').textContent = teamData.points;
     </script>
+</body>
+</html>
