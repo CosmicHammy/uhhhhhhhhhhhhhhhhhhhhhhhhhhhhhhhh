@@ -27,6 +27,30 @@
         tr:nth-child(even) {
             background-color: #f2f2f2;
         }
+        tr:nth-child(1) {
+            background-color: #FFD700; /* Gold for 1st place */
+        }
+        tr:nth-child(2) {
+            background-color: #C0C0C0; /* Silver for 2nd place */
+        }
+        tr:nth-child(3) {
+            background-color: #CD7F32; /* Bronze for 3rd place */
+        }
+        tr:nth-child(4) {
+            background-color: #ADD8E6; /* Light blue for 4th place */
+        }
+        tr.team-blue {
+            background-color: #ADD8E6; /* Light blue */
+        }
+        tr.team-green {
+            background-color: #90EE90; /* Light green */
+        }
+        tr.team-yellow {
+            background-color: #FFFFE0; /* Light yellow */
+        }
+        tr.team-orange {
+            background-color: #FFDAB9; /* Light orange */
+        }
     </style>
 </head>
 <body>
@@ -48,7 +72,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <tr class="team-blue">
                 <td>1</td>
                 <td>Team A</td>
                 <td>10</td>
@@ -61,7 +85,7 @@
                 <td>25</td>
                 <td>W W W D W</td>
             </tr>
-            <tr>
+            <tr class="team-green">
                 <td>2</td>
                 <td>Team B</td>
                 <td>10</td>
@@ -73,6 +97,32 @@
                 <td>12</td>
                 <td>23</td>
                 <td>W W W W D</td>
+            </tr>
+            <tr class="team-yellow">
+                <td>3</td>
+                <td>Team C</td>
+                <td>10</td>
+                <td>6</td>
+                <td>3</td>
+                <td>1</td>
+                <td>18</td>
+                <td>9</td>
+                <td>9</td>
+                <td>21</td>
+                <td>W W D W L</td>
+            </tr>
+            <tr class="team-orange">
+                <td>4</td>
+                <td>Team D</td>
+                <td>10</td>
+                <td>5</td>
+                <td>4</td>
+                <td>1</td>
+                <td>15</td>
+                <td>10</td>
+                <td>5</td>
+                <td>19</td>
+                <td>W D W L W</td>
             </tr>
             <!-- Add more rows as needed -->
         </tbody>

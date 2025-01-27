@@ -37,6 +37,80 @@
     </header>
     <main>
         <p>Welcome to the admin page. Here you can manage the website content.</p>
+        <section>
+            <h2>Manage Teams</h2>
+            <form id="teamForm">
+                <label for="teamName">Team Name:</label>
+                <input type="text" id="teamName" name="teamName" required>
+                <button type="submit">Add Team</button>
+            </form>
+        </section>
+        <section>
+            <h2>Manage Players</h2>
+            <form id="playerForm">
+                <label for="playerName">Player Name:</label>
+                <input type="text" id="playerName" name="playerName" required>
+                <label for="teamId">Team ID:</label>
+                <input type="number" id="teamId" name="teamId" required>
+                <button type="submit">Add Player</button>
+            </form>
+        </section>
+        <section>
+            <h2>Manage Matches</h2>
+            <form id="matchForm">
+                <label for="homeTeamId">Home Team ID:</label>
+                <input type="number" id="homeTeamId" name="homeTeamId" required>
+                <label for="awayTeamId">Away Team ID:</label>
+                <input type="number" id="awayTeamId" name="awayTeamId" required>
+                <label for="homeTeamGoals">Home Team Goals:</label>
+                <input type="number" id="homeTeamGoals" name="homeTeamGoals" required>
+                <label for="awayTeamGoals">Away Team Goals:</label>
+                <input type="number" id="awayTeamGoals" name="awayTeamGoals" required>
+                <label for="matchDate">Match Date:</label>
+                <input type="date" id="matchDate" name="matchDate" required>
+                <button type="submit">Add Match</button>
+            </form>
+        </section>
+        <section>
+            <h2>Manage Match Events</h2>
+            <form id="matchEventForm">
+                <label for="matchId">Match ID:</label>
+                <input type="number" id="matchId" name="matchId" required>
+                <label for="playerId">Player ID:</label>
+                <input type="number" id="playerId" name="playerId" required>
+                <label for="eventType">Event Type:</label>
+                <select id="eventType" name="eventType" required>
+                    <option value="goal">Goal</option>
+                    <option value="yellow_card">Yellow Card</option>
+                    <option value="red_card">Red Card</option>
+                </select>
+                <label for="eventTime">Event Time:</label>
+                <input type="time" id="eventTime" name="eventTime" required>
+                <button type="submit">Add Event</button>
+            </form>
+        </section>
+        <section>
+            <h2>Match Information</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Match ID</th>
+                        <th>Home Team</th>
+                        <th>Away Team</th>
+                        <th>Home Team Goals</th>
+                        <th>Away Team Goals</th>
+                        <th>Home Team Red Cards</th>
+                        <th>Away Team Red Cards</th>
+                        <th>Home Team Yellow Cards</th>
+                        <th>Away Team Yellow Cards</th>
+                        <th>Match Date</th>
+                    </tr>
+                </thead>
+                <tbody id="matchInfo">
+                    <!-- Match data will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </section>
     </main>
     <footer>
         <p>&copy; 2023 Your Company</p>
