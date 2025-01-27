@@ -1,16 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- ...existing code... -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPL Table</title>
     <style>
-        /* ...existing code... */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(1) {
+            background-color: #FFD700; /* Gold for 1st place */
+        }
+        tr:nth-child(2) {
+            background-color: #C0C0C0; /* Silver for 2nd place */
+        }
+        tr:nth-child(3) {
+            background-color: #CD7F32; /* Bronze for 3rd place */
+        }
+        tr:nth-child(4) {
+            background-color: #ADD8E6; /* Light blue for 4th place */
+        }
+        tr.team-blue {
+            background-color: #ADD8E6; /* Light blue */
+        }
+        tr.team-green {
+            background-color: #90EE90; /* Light green */
+        }
+        tr.team-yellow {
+            background-color: #FFFFE0; /* Light yellow */
+        }
+        tr.team-orange {
+            background-color: #FFDAB9; /* Light orange */
+        }
     </style>
 </head>
 <body>
     <h1>NFL Table</h1>
     <table>
-        <thead>
-            <!-- ...existing code... -->
+    <thead>
+            <tr>
+                <th>Position</th>
+                <th>Team</th>
+                <th>Played (P)</th>
+                <th>Wins (W)</th>
+                <th>Draws (D)</th>
+                <th>Losses (L)</th>
+                <th>Goals For (GF)</th>
+                <th>Goals Against (GA)</th>
+                <th>Goal Difference (GD)</th>
+                <th>Points (Pts)</th>
+                <th>Last 5 Games</th>
+            </tr>
         </thead>
         <tbody>
             <?php
