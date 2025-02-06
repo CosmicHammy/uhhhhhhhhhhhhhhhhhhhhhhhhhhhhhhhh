@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="""en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="""viewport" content="width=device-width, initial-scale=1.0">
     <title>Nova Football League</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/favicon.svg" type="image/x-icon">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -43,21 +44,39 @@
             width: 200px;
             height: auto;
         }
-        .button-container {
+        main {
+            display: flex;
+            justify-content: flex-start; /* Align items to the start */
+            align-items: flex-start;
+            padding: 20px;
+        }
+        section {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 40%; /* Reduced width of the section */
+            margin-right: 20px; /* Add margin to the right of the section */
+        }
+        table {
+            width: 100%;
             text-align: center;
-            margin: 40px 0;
+            border-collapse: collapse;
+        }
+        table th, table td {
+            padding: 5px; /* Reduced padding for table cells */
+            border: 1px solid #ddd;
+        }
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            margin-left: 20px;
         }
         .button-container button {
-            background-color: #333;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            margin: 10px;
-            cursor: pointer;
-            font-size: 20px;
-        }
-        .button-container button:hover {
-            background-color: #555;
+            margin: 10px 0;
+            padding: 10px 20px; /* Reduced padding for buttons */
+            font-size: 16px; /* Reduced font size for buttons */
         }
     </style>
 </head>
@@ -73,11 +92,50 @@
     <header>
         <img src="assets/nfllogo.svg" alt="Nova Football League Logo">
     </header>
-    <div class="button-container">
-        <button onclick="location.href='table.php'">Table</button>
-        <button onclick="location.href='teams.html'">Teams</button>
-        <button onclick="location.href='news.html'">News</button>
-    </div>
+    <main>
+        <section>
+            <h4>Table</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Team</th>
+                        <th>MP</th>
+                        <th>W</th>
+                        <th>D</th>
+                        <th>L</th>
+                        <th>GD</th>
+                        <th>Pts</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Team A</td>
+                        <td>10</td>
+                        <td>6</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>10</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>Team B</td>
+                        <td>10</td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>8</td>
+                        <td>18</td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+            <button onclick="window.location.href='table.html'">Full Table</button>
+        </section>
+        <div class="button-container">
+            <button onclick="location.href='teams.html'">Teams</button>
+            <button onclick="location.href='news.html'">News</button>
+        </div>
+    </main>
     
     <script>
         document.addEventListener('mousemove', function(e) {

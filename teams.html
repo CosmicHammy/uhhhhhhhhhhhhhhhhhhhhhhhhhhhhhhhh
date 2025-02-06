@@ -13,6 +13,22 @@
         h1 {
             font-size: 100px; /* Stupidly large font size for heading */
         }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
         .link {
             display: inline-block;
             margin: 20px;
@@ -39,6 +55,13 @@
     </style>
 </head>
 <body>
+    <div class="navbar">
+        <a href="javascript:history.back()">Back</a>
+        <a href="#">Home</a>
+        <a href="#">Teams</a>
+        <a href="#">Schedule</a>
+        <a href="#">Standings</a>
+    </div>
     <h1>NFL Teams</h1> <!-- Added heading -->
     <center>
     <a href="teams/blue.html" class="link blue" onmouseover="document.body.style.backgroundColor='blue'">Blue</a><br>
