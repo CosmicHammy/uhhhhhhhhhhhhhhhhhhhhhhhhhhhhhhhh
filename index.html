@@ -95,7 +95,7 @@
     <main>
         <section>
             <h4>Table</h4>
-            <table>
+            <table id="miniTable">
                 <thead>
                     <tr>
                         <th>Team</th>
@@ -144,6 +144,28 @@
             const hue = Math.round(x * 360);
             const lightness = Math.round(y * 100);
             document.body.style.backgroundColor = `hsl(${hue}, 100%, ${lightness}%)`;
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/api/mini-table')
+                .then(response => response.json())
+                .then(data => {
+                    const tbody = document.querySelector('#miniTable tbody');
+                    tbody.innerHTML = '';
+                    data.forEach(row => {
+                        const tr = document.createElement('tr');
+                        tr.innerHTML = `
+                            <td>${row.team}</td>
+                            <td>${row.mp}</td>
+                            <td>${row.w}</td>
+                            <td>${row.d}</td>
+                            <td>${row.l}</td>
+                            <td>${row.gd}</td>
+                            <td>${row.pts}</td>
+                        `;
+                        tbody.appendChild(tr);
+                    });
+                });
         });
     </script>
 </body>

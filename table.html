@@ -55,7 +55,7 @@
 </head>
 <body>
     <h1>NFL Table</h1>
-    <table>
+    <table id="leagueTable">
         <thead>
             <tr>
                 <th>Position</th>
@@ -72,60 +72,35 @@
             </tr>
         </thead>
         <tbody>
-            <tr class="team-blue">
-                <td>1</td>
-                <td>Team A</td>
-                <td>10</td>
-                <td>8</td>
-                <td>1</td>
-                <td>1</td>
-                <td>25</td>
-                <td>10</td>
-                <td>15</td>
-                <td>25</td>
-                <td>W W W D W</td>
-            </tr>
-            <tr class="team-green">
-                <td>2</td>
-                <td>Team B</td>
-                <td>10</td>
-                <td>7</td>
-                <td>2</td>
-                <td>1</td>
-                <td>20</td>
-                <td>8</td>
-                <td>12</td>
-                <td>23</td>
-                <td>W W W W D</td>
-            </tr>
-            <tr class="team-yellow">
-                <td>3</td>
-                <td>Team C</td>
-                <td>10</td>
-                <td>6</td>
-                <td>3</td>
-                <td>1</td>
-                <td>18</td>
-                <td>9</td>
-                <td>9</td>
-                <td>21</td>
-                <td>W W D W L</td>
-            </tr>
-            <tr class="team-orange">
-                <td>4</td>
-                <td>Team D</td>
-                <td>10</td>
-                <td>5</td>
-                <td>4</td>
-                <td>1</td>
-                <td>15</td>
-                <td>10</td>
-                <td>5</td>
-                <td>19</td>
-                <td>W D W L W</td>
-            </tr>
-            <!-- Add more rows as needed -->
+            <!-- Data will be populated here -->
         </tbody>
     </table>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/api/table')
+                .then(response => response.json())
+                .then(data => {
+                    const tbody = document.querySelector('#leagueTable tbody');
+                    tbody.innerHTML = '';
+                    data.forEach(row => {
+                        const tr = document.createElement('tr');
+                        tr.innerHTML = `
+                            <td>${row.position}</td>
+                            <td>${row.team}</td>
+                            <td>${row.played}</td>
+                            <td>${row.wins}</td>
+                            <td>${row.draws}</td>
+                            <td>${row.losses}</td>
+                            <td>${row.goals_for}</td>
+                            <td>${row.goals_against}</td>
+                            <td>${row.goal_difference}</td>
+                            <td>${row.points}</td>
+                            <td>${row.last_5_games}</td>
+                        `;
+                        tbody.appendChild(tr);
+                    });
+                });
+        });
+    </script>
 </body>
 </html>
