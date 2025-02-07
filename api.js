@@ -5,9 +5,9 @@ const app = express();
 const port = 3000;
 
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'password',
+    host: 'nfl1mysql-nfl1.k.aivencloud.com',
+    user: 'avnadmin',
+    password: 'AVNS_XgVrDMM1R1wpkq1KXQd',
     database: 'football_league'
 });
 
@@ -33,5 +33,5 @@ app.get('/api/mini-table', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+    console.log(`Server running at https://nfl1mysql-nfl1.k.aivencloud.com:${22605}`);
 });

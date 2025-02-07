@@ -64,3 +64,14 @@ CREATE PROCEDURE add_player(
     IN player_name VARCHAR(50),
     IN team_name VARCHAR(50)
 )
+BEGIN
+    DECLARE team_id INT;
+    SELECT team_id INTO team_id FROM teams WHERE team_name = team_name;
+    IF team_id IS NOT NULL THEN
+        INSERT INTO players (player_name, team_id) VALUES (player_name, team_id);
+    ELSE
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Team not found';
+    END IF;
+END //
+
+DELIMITER ;
