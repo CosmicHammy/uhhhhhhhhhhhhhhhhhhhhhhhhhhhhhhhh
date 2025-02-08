@@ -2,7 +2,7 @@ CREATE DATABASE database_name;
 
 USE database_name;
 
-CREATE TABLE epl_table (
+CREATE TABLE nfl_table (
     position INT PRIMARY KEY,
     team VARCHAR(50),
     played INT,
