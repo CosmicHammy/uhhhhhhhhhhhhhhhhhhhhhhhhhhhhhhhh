@@ -31,6 +31,64 @@
             bottom: 0;
         }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const matchInfoTable = document.getElementById('matchInfo');
+
+            document.getElementById('teamForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // Handle team form submission
+                const teamName = document.getElementById('teamName').value;
+                console.log('Add Team:', teamName);
+                // Add logic to update team information
+            });
+
+            document.getElementById('playerForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // Handle player form submission
+                const playerName = document.getElementById('playerName').value;
+                const teamId = document.getElementById('teamId').value;
+                console.log('Add Player:', playerName, 'Team ID:', teamId);
+                // Add logic to update player information
+            });
+
+            document.getElementById('matchForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // Handle match form submission
+                const homeTeamId = document.getElementById('homeTeamId').value;
+                const awayTeamId = document.getElementById('awayTeamId').value;
+                const homeTeamGoals = document.getElementById('homeTeamGoals').value;
+                const awayTeamGoals = document.getElementById('awayTeamGoals').value;
+                const matchDate = document.getElementById('matchDate').value;
+                console.log('Add Match:', homeTeamId, awayTeamId, homeTeamGoals, awayTeamGoals, matchDate);
+                // Add logic to update match information
+                const newRow = matchInfoTable.insertRow();
+                newRow.innerHTML = `
+                    <td>${Math.floor(Math.random() * 1000)}</td>
+                    <td>${homeTeamId}</td>
+                    <td>${awayTeamId}</td>
+                    <td>${homeTeamGoals}</td>
+                    <td>${awayTeamGoals}</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>${matchDate}</td>
+                `;
+            });
+
+            document.getElementById('matchEventForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // Handle match event form submission
+                const matchId = document.getElementById('matchId').value;
+                const playerId = document.getElementById('playerId').value;
+                const eventType = document.getElementById('eventType').value;
+                const eventTime = document.getElementById('eventTime').value;
+                console.log('Add Event:', matchId, playerId, eventType, eventTime);
+                // Add logic to update match event information
+            });
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -113,8 +171,5 @@
             </table>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2023 Your Company</p>
-    </footer>
 </body>
 </html>
