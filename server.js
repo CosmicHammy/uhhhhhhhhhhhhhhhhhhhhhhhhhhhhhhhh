@@ -45,3 +45,49 @@ app.get('/api/standings', (req, res) => {
 app.listen(3000, () => {
     console.log('Server is running on port 3000');
 });
+
+const express = require("express");
+const mysql = require("mysql2/promise");
+const cors = require("cors");
+
+const app = express();
+app.use(express.json());
+app.use(cors());
+
+const pool = mysql.createPool({
+    host: "nfl1mysql-nfl1.k.aivencloud.com",
+    user: "avnadmin",
+    password: "AVNS_XgVrDMM1R1wpkq1KXQd",
+    database: "nfl1db",
+    port: 22605,
+    ssl: { rejectUnauthorized: true }
+});
+
+// ✅ Fetch Standings
+app.get("/api/standings", async (req, res) => {
+    try {
+        const [results] = await pool.query(`
+            SELECT 
+                team_id AS id,
+                team AS name,
+                played,
+                wins AS won,
+                draws AS drawn,
+                losses AS lost,
+                goals_for AS goalsFor,
+                goals_against AS goalsAgainst,
+                goal_difference AS goalDifference,
+                points,
+                last_5_games AS form
+            FROM nfl_table
+            ORDER BY points DESC, goalDifference DESC, goalsFor DESC;
+        `);
+        res.json(results);
+    } catch (error) {
+        console.error("Error fetching standings:", error);
+        res.status(500).json({ error: "Database query failed" });
+    }
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

@@ -3,105 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="assets/favicon.svg" type="image/x-icon">
-    <title>NFL Table</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        th, td {
-            padding: 10px;
-            border: 1px solid #ddd;
-            text-align: center;
-        }
-        th {
-            background-color: #4CAF50;
-            color: white;
-        }
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-        tr:nth-child(1) {
-            background-color: #FFD700; /* Gold for 1st place */
-        }
-        tr:nth-child(2) {
-            background-color: #C0C0C0; /* Silver for 2nd place */
-        }
-        tr:nth-child(3) {
-            background-color: #CD7F32; /* Bronze for 3rd place */
-        }
-        tr:nth-child(4) {
-            background-color: #ADD8E6; /* Light blue for 4th place */
-        }
-        tr.team-blue {
-            background-color: #ADD8E6; /* Light blue */
-        }
-        tr.team-green {
-            background-color: #90EE90; /* Light green */
-        }
-        tr.team-yellow {
-            background-color: #FFFFE0; /* Light yellow */
-        }
-        tr.team-orange {
-            background-color: #FFDAB9; /* Light orange */
-        }
-    </style>
+    <title>League Standings</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>NFL Table</h1>
-    <table id="leagueTable">
+    <h1>League Standings</h1>
+    <table id="standingsTable">
         <thead>
             <tr>
-                <th>Position</th>
+                <th>Pos</th>
                 <th>Team</th>
-                <th>Played (P)</th>
-                <th>Wins (W)</th>
-                <th>Draws (D)</th>
-                <th>Losses (L)</th>
-                <th>Goals For (GF)</th>
-                <th>Goals Against (GA)</th>
-                <th>Goal Difference (GD)</th>
-                <th>Points (Pts)</th>
-                <th>Last 5 Games</th>
+                <th>P</th>
+                <th>W</th>
+                <th>D</th>
+                <th>L</th>
+                <th>GF</th>
+                <th>GA</th>
+                <th>GD</th>
+                <th>Pts</th>
+                <th>Form</th>
             </tr>
         </thead>
-        <tbody>
-            <!-- Data will be populated here -->
-        </tbody>
+        <tbody></tbody>
     </table>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            fetch('/api/table')
-                .then(response => response.json())
-                .then(data => {
-                    const tbody = document.querySelector('#leagueTable tbody');
-                    tbody.innerHTML = '';
-                    data.forEach(row => {
-                        const tr = document.createElement('tr');
-                        tr.innerHTML = `
-                            <td>${row.position}</td>
-                            <td>${row.team}</td>
-                            <td>${row.played}</td>
-                            <td>${row.wins}</td>
-                            <td>${row.draws}</td>
-                            <td>${row.losses}</td>
-                            <td>${row.goals_for}</td>
-                            <td>${row.goals_against}</td>
-                            <td>${row.goal_difference}</td>
-                            <td>${row.points}</td>
-                            <td>${row.last_5_games}</td>
-                        `;
-                        tbody.appendChild(tr);
-                    });
-                });
-        });
-    </script>
+
+    <script src="standings.js"></script>
 </body>
 </html>
